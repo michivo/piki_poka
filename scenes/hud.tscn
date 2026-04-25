@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dxeafccj108jl"]
+
+[ext_resource type="Script" uid="uid://das7q8slmxcg" path="res://scenes/score.gd" id="1_ahhtf"]
+[ext_resource type="FontFile" uid="uid://cpc5gvw2pjpol" path="res://Xolonium-Regular.ttf" id="2_oo0fn"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1250852214]
+script = ExtResource("1_ahhtf")
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=2066910631]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 65.0
+offset_bottom = 98.0
+theme_override_fonts/font = ExtResource("2_oo0fn")
+theme_override_font_sizes/font_size = 64
+text = "0"
