@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://dyxbykkdf3d0a"]
 
 [ext_resource type="PackedScene" uid="uid://du7wof1c8ywx7" path="res://scenes/player.tscn" id="1_1wyjq"]
+[ext_resource type="Script" uid="uid://1dbqi5gh78ii" path="res://scenes/spiel.gd" id="1_r1apd"]
 [ext_resource type="Texture2D" uid="uid://bsh1k1803x22j" path="res://assets/sprites/world_tileset.png" id="2_nj70s"]
 [ext_resource type="PackedScene" uid="uid://dnd02cml5k0vv" path="res://assets/sprites/platform.tscn" id="3_hbnix"]
 [ext_resource type="PackedScene" uid="uid://dj2umfa4im8bt" path="res://scenes/coin.tscn" id="4_ecqsa"]
 [ext_resource type="PackedScene" uid="uid://lql3vuom73hp" path="res://scenes/killzone.tscn" id="5_wrvbj"]
 [ext_resource type="PackedScene" uid="uid://bwco8esadk2k8" path="res://scenes/slime.tscn" id="6_gdn4h"]
+[ext_resource type="PackedScene" uid="uid://dxeafccj108jl" path="res://scenes/hud.tscn" id="7_lor5l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w2ybj"]
 texture = ExtResource("2_nj70s")
@@ -226,6 +228,7 @@ _data = {
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_b4wcr"]
 
 [node name="Spiel" type="Node2D" unique_id=683696088]
+script = ExtResource("1_r1apd")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1082195170]
 position = Vector2(-66, 91)
@@ -255,12 +258,6 @@ position = Vector2(500, 68)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platform2" unique_id=1474976028]
 libraries/ = SubResource("AnimationLibrary_wc7uu")
 autoplay = &"RESET"
-
-[node name="Coin" parent="." unique_id=1839143949 instance=ExtResource("4_ecqsa")]
-position = Vector2(181, 40)
-
-[node name="Coin2" parent="." unique_id=1033259172 instance=ExtResource("4_ecqsa")]
-position = Vector2(99, 39)
 
 [node name="killzone" parent="." unique_id=215131990 instance=ExtResource("5_wrvbj")]
 position = Vector2(37, 18)
@@ -327,6 +324,12 @@ position = Vector2(57, -248)
 [node name="Coin20" parent="Coins" unique_id=77718103 instance=ExtResource("4_ecqsa")]
 position = Vector2(70, -248)
 
+[node name="Coin2" parent="Coins" unique_id=1033259172 instance=ExtResource("4_ecqsa")]
+position = Vector2(99, 39)
+
+[node name="Coin" parent="Coins" unique_id=1839143949 instance=ExtResource("4_ecqsa")]
+position = Vector2(181, 40)
+
 [node name="Platforms" type="Node" parent="." unique_id=1812014971]
 
 [node name="Platform3" parent="Platforms" unique_id=462015575 instance=ExtResource("3_hbnix")]
@@ -352,3 +355,5 @@ position = Vector2(146, -296)
 
 [node name="Slime" parent="." unique_id=1359947445 instance=ExtResource("6_gdn4h")]
 position = Vector2(55, -52)
+
+[node name="HUD" parent="." unique_id=1250852214 instance=ExtResource("7_lor5l")]

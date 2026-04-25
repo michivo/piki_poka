@@ -1,6 +1,7 @@
 extends Area2D
 
+signal coin_collected
+
 func _on_body_entered(body):
-	print("hallo oskar") # Replace with function body.
+	emit_signal("coin_collected")
 	queue_free()
-	
